@@ -8,14 +8,11 @@ import { Course } from '../../model/course';
 })
 export class CardComponent {
   @Input() course: Course;
-
   @Input() cardIndex: number;
 
   @Output('customEventClicked') customEventEmitter = new EventEmitter<Course>();
-
   onCustomButtonClicked() {
     console.log('Card component - custom browser event clicked...');
-
     this.customEventEmitter.emit(this.course);
   }
 
@@ -29,4 +26,8 @@ export class CardComponent {
       'background-position': 'center'
     };
   }
+
+  // Pipes
+  startDate = new Date(2023, 0, 1); // 1st of January 2023.
+
 }

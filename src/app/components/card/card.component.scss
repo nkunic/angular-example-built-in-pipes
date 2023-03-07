@@ -34,6 +34,12 @@
       width: 100%;
       background-repeat: no-repeat;
     }
+    .card__details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
     .card__category {
       display: inline-flex;
       padding: 0.3125rem 0.625rem;

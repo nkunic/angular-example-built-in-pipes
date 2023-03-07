@@ -3,7 +3,7 @@ export const COURSES: any = [
 
   {
     id: 1,
-    title: 'Angular Core Deep Dive',
+    title: 'Angular core deep dive',
     description:
       'A detailed walk-through of the most important part of Angular - the Core and Common modules',
     lessonsCount: 10,

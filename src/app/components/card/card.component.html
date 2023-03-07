@@ -14,9 +14,12 @@
 >
   <div class="card__header">
     <h3 class="card__title">
-      {{ cardIndex + ') ' + course.title }}
+      <!-- {{ cardIndex + ') ' + course.title | uppercase }} -->
+      <!-- {{ cardIndex + ') ' + course.title | lowercase }} -->
+      {{ cardIndex + ') ' + course.title | titlecase }}
     </h3>
   </div>
+
   <div class="card__content">
     <div class="card__image">
       <div
@@ -31,26 +34,39 @@
     <p class="card__description">
       {{ course.description }}
     </p>
-    <div
-      class="card__category"
-      [ngSwitch]="course.category"
-      [ngClass]="[
-        course.category == 'BEGINNER' ? 'card__category--beginner' : '',
-        course.category == 'INTERMEDIATE' ? 'card__category--intermediate' : '',
-        course.category == 'ADVANCED' ? 'card__category--advanced' : '',
-        course.category != 'BEGINNER' &&
-        course.category != 'INTERMEDIATE' &&
-        course.category != 'ADVANCED'
-          ? 'card__category--all-levels'
-          : ''
-      ]"
-    >
-      <span *ngSwitchCase="'BEGINNER'">Beginner</span>
-      <span *ngSwitchCase="'INTERMEDIATE'">Intermediate</span>
-      <span *ngSwitchCase="'ADVANCED'">Advanced</span>
-      <span *ngSwitchDefault>All levels</span>
+    <div class="card__details">
+      <div
+        class="card__category"
+        [ngSwitch]="course.category"
+        [ngClass]="[
+          course.category == 'BEGINNER' ? 'card__category--beginner' : '',
+          course.category == 'INTERMEDIATE'
+            ? 'card__category--intermediate'
+            : '',
+          course.category == 'ADVANCED' ? 'card__category--advanced' : '',
+          course.category != 'BEGINNER' &&
+          course.category != 'INTERMEDIATE' &&
+          course.category != 'ADVANCED'
+            ? 'card__category--all-levels'
+            : ''
+        ]"
+      >
+        <span *ngSwitchCase="'BEGINNER'">Beginner</span>
+        <span *ngSwitchCase="'INTERMEDIATE'">Intermediate</span>
+        <span *ngSwitchCase="'ADVANCED'">Advanced</span>
+        <span *ngSwitchDefault>All levels</span>
+      </div>
+      <div class="card__date">
+        <strong> Start date: </strong>
+        <!-- {{ startDate }} Sun Jan 01 2023 00:00:00 GMT+0100 (Central European Standard Time) -->
+        <!-- {{ startDate | date }} Jan 1, 2023 -->
+        <!-- {{ startDate | date: 'MM/dd/yy' }} 01/01/23 -->
+        <!-- {{ startDate | date: 'MMM/dd/yy' }} Jan/01/23-->
+        {{ startDate | date: 'MM/dd/yy' }}
+      </div>
     </div>
   </div>
+
   <div class="card__footer">
     <button
       class="card__button card__button--standard"
