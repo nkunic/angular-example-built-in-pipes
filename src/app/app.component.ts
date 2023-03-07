@@ -10,7 +10,7 @@ import { Course } from './model/course';
 export class AppComponent {
   courses = COURSES; // Array
 
-  course = COURSES[0]; // Js object
+  course = COURSES[1]; // Js object
 
   onCustomEventClicked(course: Course) {
     console.log(
