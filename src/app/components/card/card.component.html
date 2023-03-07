@@ -18,6 +18,14 @@
       <!-- {{ cardIndex + ') ' + course.title | lowercase }} -->
       {{ cardIndex + ') ' + course.title | titlecase }}
     </h3>
+    <div class="card_price">
+      <!-- {{ course.price | number }}€ 9.998766553 -->
+      <!-- {{ course.price | number: '3.3-5' }}€  Integer digits.Fraction didgits - Maximum digits 009.99877 -->
+      <!-- {{ course.price | currency }} $10.00 -->
+      <!-- {{ course.price | currency: 'GBP' }} £10.00 -->
+      <!-- {{ course.price | currency: 'EUR' }} €10.00 -->
+      {{ course.price | currency: 'EUR' }}
+    </div>
   </div>
 
   <div class="card__content">
@@ -68,6 +76,9 @@
   </div>
 
   <div class="card__footer">
+    <div class="card_rate">
+      {{ course.rate | percent }}
+    </div>
     <button
       class="card__button card__button--standard"
       (click)="onCustomButtonClicked()"

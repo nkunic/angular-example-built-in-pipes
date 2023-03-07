@@ -17,8 +17,18 @@
   }
 
   .card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
     .card__title {
       margin-top: 0;
+      margin-bottom: 0;
+    }
+    .card_price {
+      font-size: 1rem;
+      color: black;
+      font-weight: bold;
     }
   }
 
@@ -67,7 +77,13 @@
   .card__footer {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+
+    .card_rate {
+      font-size: 1rem;
+      color: black;
+      font-weight: bold;
+    }
 
     .card__button {
       cursor: pointer;
