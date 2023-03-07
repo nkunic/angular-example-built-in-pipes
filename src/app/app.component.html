@@ -1,8 +1,14 @@
 <h1>ANGULAR Built-In Pipes</h1>
 
+<!-- {{ courses | json }} -->
+
+<div *ngFor="let pair of course | keyvalue">
+  {{ pair.key }} + ':' + 
+</div>
+
 <div class="cards">
   <app-card
-    *ngFor="let course of courses | slice: 0:2; index as i"
+    *ngFor="let course of courses; index as i"
     [cardIndex]="i + 1"
     [course]="course"
     (customEventClicked)="onCustomEventClicked($event)"

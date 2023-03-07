@@ -8,7 +8,9 @@ import { Course } from './model/course';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  courses = COURSES;
+  courses = COURSES; // Array
+
+  course = COURSES[0]; // Js object
 
   onCustomEventClicked(course: Course) {
     console.log(
